@@ -11,6 +11,14 @@ export class HomePage {
 
 	constructor(public navCtrl: NavController) {
 
+		this.items = this.simulaDados();
+
+	}
+
+	simulaDados() {
+
+		let _items = [];
+
 		for (let index = 0; index < 11; index++) {
 			let element = {
 				usuario: 'User ' + index,
@@ -19,9 +27,11 @@ export class HomePage {
 				fotoPerfil: 'https://picsum.photos/400/400/?random=' + index,
 			};
 
-			this.items.push(element);
+			_items.push(element);
 
 		}
+
+		return _items;
 
 	}
 
