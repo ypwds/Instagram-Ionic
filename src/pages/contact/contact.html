@@ -1,17 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Perfil
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+    <ion-list>
+        <ion-item no-lines>
+            <ion-avatar class="img-center">
+                <img src="https://ionicframework.com/docs/v3/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+            </ion-avatar>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Usuário</ion-label>
+            <ion-input type="text" [(ngModel)]="usuarioObj.usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>E-mail</ion-label>
+            <ion-input type="email" [(ngModel)]="usuarioObj.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Telefone</ion-label>
+            <ion-input type="text" [(ngModel)]="usuarioObj.telefone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="usuarioObj.senha"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <p>
+        <button ion-button color="light" full (click)="showConfirm()">Salvar</button>
+    </p>
 </ion-content>
