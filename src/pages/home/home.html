@@ -1,17 +1,50 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Início</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+    <ion-card *ngFor="let item of items">
+
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="{{item.fotoPerfil}}">
+            </ion-avatar>
+            <h2>{{item.usuario}}</h2>
+            <p>November 5, 1955</p>
+        </ion-item>
+
+        <img src="{{item.fotoPost}}">
+
+        <ion-card-content>
+            <p>{{item.legenda}}</p>
+        </ion-card-content>
+
+        <ion-row no-padding>
+            <ion-col>
+                <button ion-button clear small color="dark" icon-start>
+                    <ion-icon name="heart"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col text-left>
+                <button ion-button clear small color="dark" icon-start>
+                    <ion-icon name="chatbubbles"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col text-left>
+                <button ion-button clear small color="dark" icon-start>
+                    <ion-icon name="send"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col text-right>
+                <button ion-button clear small color="dark" clear icon-start>
+                    <ion-icon name="bookmark"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+
 </ion-content>
