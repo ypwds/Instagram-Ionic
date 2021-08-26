@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { UsuarioProvider } from '../../providers/usuario/usuario';
 
 @Component({
 	selector: 'page-home',
@@ -9,29 +10,9 @@ export class HomePage {
 
 	items = [];
 
-	constructor(public navCtrl: NavController) {
+	constructor(public navCtrl: NavController, private usuarioProvider: UsuarioProvider) {
 
-		this.items = this.simulaDados();
-
-	}
-
-	simulaDados() {
-
-		let _items = [];
-
-		for (let index = 0; index < 11; index++) {
-			let element = {
-				usuario: 'User ' + index,
-				legenda: 'Bem-vindo ' + index,
-				fotoPost: 'https://picsum.photos/500/500?random=' + index,
-				fotoPerfil: 'https://picsum.photos/400/400/?random=' + index,
-			};
-
-			_items.push(element);
-
-		}
-
-		return _items;
+		this.items = this.usuarioProvider.simulaDados();
 
 	}
 

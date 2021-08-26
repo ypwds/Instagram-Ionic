@@ -1,0 +1,20 @@
+[
+    {
+        "usuario": "User 1",
+        "legenda": "Bem-vindo  1",
+        "fotoPost": "https://picsum.photos/500/500?random=1",
+        "fotoPerfil": "https://picsum.photos/400/400/?random=1"
+    },
+    {
+        "usuario": "User 2",
+        "legenda": "Bem-vindo  2",
+        "fotoPost": "https://picsum.photos/500/500?random=2",
+        "fotoPerfil": "https://picsum.photos/400/400/?random=2"
+    },
+    {
+        "usuario": "User 3",
+        "legenda": "Bem-vindo  3",
+        "fotoPost": "https://picsum.photos/500/500?random=3",
+        "fotoPerfil": "https://picsum.photos/400/400/?random=3"
+    }
+]
