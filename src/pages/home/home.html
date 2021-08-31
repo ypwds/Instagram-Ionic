@@ -4,7 +4,15 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+    <ion-scroll scrollX="true" text-nowrap margin-top>
+        <div class="story" text-center *ngFor="let story of stories" [ngClass]="!story.seen ? 'unseen' : ''">
+            <img src="{{story.userPicture}}" alt="'Story de ' + {{story.userName}}">
+
+            <span class="block">{{story.userName}}</span>
+        </div>
+    </ion-scroll>
 
     <ion-card *ngFor="let item of items">
 
@@ -13,7 +21,7 @@
                 <img src="{{item.fotoPerfil}}">
             </ion-avatar>
             <h2>{{item.usuario}}</h2>
-            <p>November 5, 1955</p>
+            <p>Setembro 31, 2021</p>
         </ion-item>
 
         <img src="{{item.fotoPost}}">

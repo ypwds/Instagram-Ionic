@@ -5,13 +5,30 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UsuarioProvider {
 
+    API_URL = 'assets/db/stories.json';  //Onde está localizado o arquivo com os dados dos stories
+
     constructor(public http: HttpClient) {
         console.log('Hello UsuarioProvider Provider');
     }
 
-    getUsuarios() {
-        // TODO: fazer uma requisicao http get ao json e retornar pra tela
-        // this.http.get()
+    getStory() {
+
+        let stories = [];
+
+        //pegando os dados do arquivo stories.json
+        this.http.get(this.API_URL).toPromise().then(data => {
+            console.log(data);
+
+            //adicionando os dados recebidos do arquivo stories.json ao array stories
+            for (let key in data) {
+                if (data.hasOwnProperty(key)) {
+                    stories.push(data[key]);
+                }
+            }
+        });
+
+        //return console.log(this.stories);
+        return stories; //retornando o array com os dados dos stories
     }
 
     simulaDados() {

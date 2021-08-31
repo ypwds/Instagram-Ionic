@@ -9,8 +9,11 @@ import { UsuarioProvider } from '../../providers/usuario/usuario';
 export class HomePage {
 
 	items = [];
+	stories = [];
 
 	constructor(public navCtrl: NavController, private usuarioProvider: UsuarioProvider) {
+
+		this.stories = this.usuarioProvider.getStory();
 
 		this.items = this.usuarioProvider.simulaDados();
 
